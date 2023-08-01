@@ -1,0 +1,46 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  </head>
+  <body style="background-color: darkcyan;">
+      <div class="card" style="width: 20rem; margin: auto; margin-top: 20%;">
+    <div class="card-body" style="text-align: center;">
+      <h5 class="card-title">Group Counter</h5>
+      <h5 class="card-title"  id="valInOneGrp">0</h5>
+      <button type="button" id="myBtn" onclick="incrFun()" style="background-color: rgb(128, 0, 0); color: aliceblue;" >Increament</button>
+      <button type="button" id="saveBtn" onclick="saveFun()" style="background-color: green; color: aliceblue;">Save</button>  
+    </div>
+    <h5 style="text-align: center;"> Previous Entries </h5>
+    <p id="entry" style="text-align: center;">0</p>
+    <h5 style="text-align: center;"> Grand Total </h5>
+    <p id="total" style="text-align: center;">0</p>
+  </div>
+
+  <script>
+      let valInOneGrp = 0;
+      let total = 0;
+        function incrFun(){
+        valInOneGrp = valInOneGrp + 1;
+        document.getElementById('valInOneGrp').innerText= valInOneGrp;
+        
+    } 
+      let valInDiffGrp="";
+    function saveFun(){
+          valInDiffGrp = valInDiffGrp + valInOneGrp + "-";
+          total=total+valInOneGrp;
+          document.getElementById("entry").textContent = valInDiffGrp;
+          document.getElementById("total").innerHTML = `${total}`;
+          document.getElementById("valInOneGrp").innerHTML = 0;
+          valInOneGrp=0;
+
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+  </html>
